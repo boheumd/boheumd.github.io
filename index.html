@@ -11,7 +11,7 @@
     gtag('config', 'UA-7580334-2');
   </script>
  -->
-  <title>Bo He (何博)</title>
+  <title>Bo He's Personal Website</title>
   
   <meta name="author" content="Jon Barron">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -159,7 +159,43 @@
               <p></p>
               <p>We propose an novel image-wise neural representation, GNeRV, which combines the generalizability of autoencoders with the simplicity and compactness of implicit representation. It generalizes well on unseen images, and encodes images very fast, 36× faster than convolutional autoencoders.</p>
             </td>
- 
+
+          <tr onmouseout="DVPvp_stop()" onmouseover="DVPvp_start()">
+            <td style="padding:20px;width:30%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='NeRV_image'>
+                  <img src='images/ActionStates.png' width="240"></div>
+                <img src='images/ActionStates.png' width="240">
+              </div>
+              <script type="text/javascript">
+                function DVPvp_start() {
+                  document.getElementById('ActionStates_image').style.opacity = "1";
+                }
+
+                function DVPvp_stop() {
+                  document.getElementById('ActionStates_image').style.opacity = "0";
+                }
+                videodepth_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:70%;vertical-align:middle">
+                <papertitle>Recognizing Actions using Object States</papertitle>
+              </a>
+              <br>
+              <a href="https://scholar.google.com/citations?user=VsTvk-8AAAAJ&hl=en">Nirat Saini</a>,
+              <strong>Bo He</strong>,
+              <a href="http://www.cs.umd.edu/~gauravsh/">Gaurav Shrivastava</a>,
+              <a href="https://rssaketh.github.io/">Sai Saketh Rambhatla</a>,
+              <a href="https://www.cs.umd.edu/~abhinav/">Abhinav Shrivastava</a>
+              <br>
+              <em>ICLR Workshop</em>, 2022  
+              <br>
+              <a href="https://openreview.net/pdf?id=HBgzIHOUqgq">arxiv</a>
+              <p></p>
+              <p>We propose a computational framework that uses only two object states, start and end, and learns to recognize the underlying actions.</p>
+            </td>
+          </tr>  
+
           <tr onmouseout="DVPvp_stop()" onmouseover="DVPvp_start()">
             <td style="padding:20px;width:30%;vertical-align:middle">
               <div class="one">
