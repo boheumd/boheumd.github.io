@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html>
+<style>
+
+p {
+  font-size: 15px;
+}
+
+</style>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>ASM-Loc</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.">
+
+
+<!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+  <link rel="icon" type="image/png" href="img/seal_icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110862391-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-110862391-1');
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main" >
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                ASM-Loc: Action-aware Segment Modeling for</br> 
+                Weakly-Supervised Temporal Action Localization</br> 
+                <small>
+                    CVPR 2022 
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                      <a href="https://boheumd.github.io/"><strong>Bo He<sup>1</sup></strong></a>,
+                      <a href="https://scholar.google.com/citations?user=k0qC-7AAAAAJ&hl=en">Xitong Yang<sup>1</sup></a>,
+                      <a href="https://scholar.google.com/citations?user=ZTRGztgAAAAJ&hl=en">Le Kang<sup>2</sup></a>,
+                      <a href="https://scholar.google.com/citations?user=Jy6I9AIAAAAJ&hl=en">Zhiyu Cheng<sup>2</sup></a>,
+                      Xin Zhou<sup>2</sup>,
+                      <a href="https://www.cs.umd.edu/~abhinav/">Abhinav Shrivastava<sup>1</sup></a>
+                    </li>
+                </ul>
+                <sup>1</sup> University of Maryland, College Park &emsp; <sup>2</sup> Baidu Research, USA
+            </div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://arxiv.org/pdf/2203.15187v1.pdf">
+                               <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/boheumd/ASM-Loc">
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    Weakly-supervised temporal action localization aims to recognize and localize action segments in untrimmed videos given only video-level action labels for training.
+                    Without the boundary information of action segments, existing methods mostly rely on multiple instance learning (MIL), where the predictions of unlabeled instances (i.e., video snippets) are supervised by classifying labeled bags (i.e., untrimmed videos).
+                    However, this formulation typically treats snippets in a video as <b><i>independent</i></b> instances, ignoring the underlying temporal structures within and across action segments.
+                    To address this problem, we propose ASM-Loc, a novel WTAL framework that enables <b><i>explicit, action-aware segment modeling</i></b> beyond standard MIL-based methods. 
+                    Our framework entails three segment-centric components: (i) dynamic segment sampling for compensating the contribution of short actions; (ii) intra- and inter-segment attention for modeling action dynamics and capturing temporal dependencies; (iii) pseudo instance-level supervision for improving action boundary prediction.
+                    Furthermore, a multi-step refinement strategy is proposed to progressively improve action proposals along the model training process.
+                    Extensive experiments on THUMOS-14 and ActivityNet-v1.3 demonstrate the effectiveness of our approach, establishing new state of the art on both datasets.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>Motivation</h3>
+                <p class="text-justify">
+                    There are two common failures in existing MIL-based methods: missed detection of short action segments and incomplete or over-complete action segments.
+                    These MIL-based methods treat snippets in a video as ndependent instances, where their underlying temporal structures are neglected in either the feature modeling or prediction stage.
+                    Our ASM-Loc leverages the action proposals as well as the proposed segment-centric modules to address the common failures in existing MIL-based methods.
+                </p>
+                <p style="text-align:center;">
+                    <image src="images/teaser.png" height="320px" >
+                </p>
+
+                <h3>Model overview</h3>
+                <p class="text-justify">
+                    Our ASM-Loc is a novel WTAL framework with explicit, action-aware segment modeling modules
+                    Leverage action proposals generated by the standard MIL-based methods.
+                    <ul>
+                    <li>The Dynamic Segment Sampling module dynamically up-samples proposals with short durations.</li>
+                    <li>The Intra- and Inter-segment attention modules capture temporal structures within & across action segments.</li>
+                    <li>The Pseudo Instance-level Loss improves boundary prediction by leveraging finer-grained supervision.</li>
+                    <li>A multi-step refinement process to improve the quality of action proposals and the final localization result.</li>
+                    </ul>
+                </p>
+                <p style="text-align:center;">
+                    <image src="images/model.png" height="360px" >
+                </p>
+
+                <h3>Experiments</h3>
+                <h4>THUMOS-14 Dataset</h4>
+                <p style="text-align:center;">
+                    <image src="images/thumos14.png" height="360px" >
+                </p>
+
+                <h4>ActivityNet-v1.3 Dataset</h4>
+                <p style="text-align:center;">
+                    <image src="images/activitynet.png" height="300px" >
+                </p>
+
+                <h4>Qualitative</h4>
+                <p style="text-align:center;">
+                    <image src="images/qualitative.png" height="300px"></image>
+                </p>
+            </div>
+        </div>
+
+
+        <hr style="max-width: 880px;">
+        <div class="container" style="max-width: 880px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Citation</h3>
+                        <code>
+                        @article{he2022asm,<br>
+                        &nbsp; title  = {ASM-Loc: Action-aware Segment Modeling for Weakly-Supervised Temporal Action Localization},<br>
+                        &nbsp; author = {Bo He and Xitong Yang and Le Kang and Zhiyu Cheng and Xin Zhou and Abhinav Shrivastava},<br>
+                        &nbsp; joural = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},<br>
+                        &nbsp; year   = {2022},<br>
+                    }</code></div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <br> The website template was borrowed from <a href="https://bmild.github.io">Ben Mildenhall</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
