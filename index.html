@@ -62,11 +62,12 @@
                       </heading>
                       <p>
                       <ul>
-                        <li>(Nov 2022) : I am looking for an internship in 2023 Summer. If you find my research experiences match your position, feel free to contact me! </li>
+                        <li>(Mar 2023) : Two papers are accepted to CVPR 2023. </li>
+                        <!-- <li>(Nov 2022) : I am looking for an internship in 2023 Summer. If you find my research experiences match your position, feel free to contact me! </li> -->
                         <li>(Sep 2022) : One paper is accepted to BMVC 2022. </li>
                         <li>(Jul 2022) : One paper is accepted to ECCV 2022. </li>
                         <li>(May 2022) : I start an internship at Adobe working on multi-modal summarization task, supervised by Zhaowen Wang and Trung Bui. </li>
-                        <li>(Mar 2022) : One paper is accepted to CVPR 2022.</li>
+                        <li>(Mar 2022) : One paper is accepted to CVPR 2022. </li>
                       </ul>
                       </p>
                     </td>
@@ -81,6 +82,92 @@
           <center><font color="black">Publication</font></center>
         </heading>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+          <tr onmouseout="sfp_stop()" onmouseover="sfp_start()">
+            <td style="padding:20px;width:30%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='DNeRV_image'>
+                  <img src='images/D-NeRV.png' width="240"></div>
+                <img src='images/D-NeRV.png' width="240">
+              </div>
+              <script type="text/javascript">
+                function sfp_start() {
+                  document.getElementById('DNeRV_image').style.opacity = "1";
+                }
+
+                function sfp_stop() {
+                  document.getElementById('DNeRV_image').style.opacity = "0";
+                }
+                videodepth_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:70%;vertical-align:middle">
+                <papertitle>Towards Scalable Neural Representation for Diverse Videos</papertitle>
+              </a>
+              <br>
+              <strong>Bo He</strong>,
+              <a href="https://scholar.google.com/citations?user=k0qC-7AAAAAJ&hl=en">Xitong Yang</a>,
+              <a href="https://hywang66.github.io/">Hanyu Wang</a>,
+              <a href="http://zxwu.azurewebsites.net/">Zuxuan Wu</a>,
+              <a href="https://haochen-rye.github.io/">Hao Chen</a>,
+              <a href="https://shuaiyihuang.github.io/">Shuaiyi Huang</a>,
+              <br>
+              <a href="https://scholar.google.com/citations?user=TFpdak8AAAAJ&hl=en">Yixuan Ren</a>,
+              <a href="https://scholar.google.com/citations?user=HX0BfLYAAAAJ&hl=en">Ser-Nam Lim</a>,
+              <a href="https://www.cs.umd.edu/~abhinav/">Abhinav Shrivastava</a>
+              <br>
+              <em>CVPR</em>, 2023  
+              <br>
+              <!-- <a href="https://boheumd.github.io/D-NeRV">project page</a> /  -->
+              <!-- <a href="https://arxiv.org/pdf/2203.15187v1.pdf">arxiv</a> /  -->
+              <!-- <a href="https://github.com/boheumd/D-NeRV">code</a>   -->
+
+              <p></p>
+              <p>We propose D-NeRV, a novel neural representation framework designed to encode large-scale and diverse videos. It provides new insight into representing videos in a scalable manner, which makes it one step closer to real-world applications.</p>
+            </td>
+
+          </tr>  
+
+          <tr onmouseout="sfp_stop()" onmouseover="sfp_start()">
+            <td style="padding:20px;width:30%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='A2Summ_image'>
+                  <img src='images/A2Summ.png' width="240"></div>
+                <img src='images/A2Summ.png' width="240">
+              </div>
+              <script type="text/javascript">
+                function sfp_start() {
+                  document.getElementById('A2Summ_image').style.opacity = "1";
+                }
+
+                function sfp_stop() {
+                  document.getElementById('A2Summ_image').style.opacity = "0";
+                }
+                videodepth_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:70%;vertical-align:middle">
+                <papertitle>Align and Attend: Multimodal Summarization with Dual Contrastive Losses</papertitle>
+              </a>
+              <br>
+              <strong>Bo He</strong>,
+              <a href="https://junwang.umiacs.io/">Jun Wang</a>,
+              <a href="https://www.cs.cmu.edu/~jielinq/">Jielin Qiu</a>,
+              <a href="https://sites.google.com/site/trungbuistanford/">Trung Bui</a>,
+              <a href="https://www.cs.umd.edu/~abhinav/">Abhinav Shrivastava</a>
+              <a href="https://scholar.google.com/citations?user=lwlYARMAAAAJ&hl=en">Zhaowen Wang</a>
+              <br>
+              <em>CVPR</em>, 2023  
+              <br>
+              <a href="https://boheumd.github.io/A2Summ">project page</a> / 
+              <!-- <a href="https://arxiv.org/pdf/2203.15187v1.pdf">arxiv</a> /  -->
+              <a href="https://github.com/boheumd/A2Summ">code</a>  
+
+              <p></p>
+              <p>We propose A2Summ, a novel supervised multimodal summarization framework that summarize video frames and text sentences with time correspondence. We also collect a large-scale multimodal summarization dataset BLiSS, which contains livestream videos and transcribed texts with annotated summaries.</p>
+            </td>
+
+          </tr>  
 
           <tr onmouseout="imagination_stop()" onmouseover="imagination_start()">
             <td style="padding:20px;width:30%;vertical-align:middle">
@@ -193,9 +280,9 @@
               <br>
               <em>CVPR</em>, 2022  
               <br>
-              <a href="https://boheumd.github.io/asm-loc">project page</a> / 
+              <a href="https://boheumd.github.io/ASM-Loc">project page</a> / 
               <a href="https://arxiv.org/pdf/2203.15187v1.pdf">arxiv</a> / 
-              <a href="https://github.com/boheumd/asm-loc">code</a>  
+              <a href="https://github.com/boheumd/ASM-Loc">code</a>  
 
               <p></p>
               <p>We propose ASM-Loc, a novel weakly supervised temporal action localization framework that enables explicit, action-aware segment modeling beyond standard MIL-based methods. We establish new state of the art on THUMOS-14 and ActivityNet-v1.3 datasets.</p>
