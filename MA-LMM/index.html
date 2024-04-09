@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="MA-LMM: Memory-Augmented Large Multimodal Model for Long-Term Video Understanding">
+  <meta name="keywords" content="MA-LMM, LLM, Multimodal">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MA-LMM: Memory-Augmented Large Multimodal Model for Long-Term Video Understanding</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">MA-LMM: Memory-Augmented Large Multimodal Model for Long-Term Video Understanding</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://boheumd.github.io/">Bo He</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="https://henrylee2570.github.io/">Hengduo Li</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=7bujHzUAAAAJ&hl=en">Young Kyun Jang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://kmnp.github.io/">Menglin Jia</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=QntOfrwAAAAJ&hl=en">Xuefei Cao</a><sup>2</sup>,
+            </span>
+            <br>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=KQrLwIAAAAAJ&hl=en">Ashish Shah</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cs.umd.edu/~abhinav/">Abhinav Shrivastava</a><sup>1</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://sites.google.com/site/sernam">Ser-Nam Lim</a><sup>3</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Maryland, College Park</span>&emsp;&emsp;
+            <span class="author-block"><sup>2</sup>Meta</span>&emsp;&emsp;
+            <span class="author-block"><sup>3</sup>University of Central Florida</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+<!--               <span class="link-block">
+                <a href="https://arxiv.org/pdf/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2404.05726"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+<!--               <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/boheumd/MA-LMM"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="columns" style="padding-left: 15%; padding-right: 15%;">
+  <div class="column">
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+            <img src="./static/images/teaser.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+          <h2 class="subtitle has-text-centered">
+            <span class="dnerf">MA-LMM</span> Long-term memory bank auto-regressively stores and accumulates past video information. 
+          </h2>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="column">
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+            <img src="./static/images/gpu.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+          <h2 class="subtitle has-text-centered">
+            GPU memory consumption of existing multimodal methods and MA-LMM during inference. Circle sizes represent the number of input text tokens. 
+          </h2>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            With the success of large language models (LLMs), integrating the vision model into LLMs to build vision-language foundation models has gained much more interest recently. However, existing LLM-based large multimodal models (e.g., Video-LLaMA, VideoChat) can only take in a limited number of frames for short video understanding. 
+          </p>
+          <p>
+            In this study, we mainly focus on designing an efficient and effective model for long-term video understanding. Instead of trying to process more frames simultaneously like most existing work, we propose to process videos in an online manner and store past video information in a memory bank. This allows our model to reference historical video content for long-term analysis without exceeding LLMs' context length constraints or GPU memory limits.
+          </p>
+          <p>
+            Our memory bank can be seamlessly integrated into current multimodal LLMs in an off-the-shelf manner. We conduct extensive experiments on various video understanding tasks, such as long-video understanding, video question answering, and video captioning, and our model can achieve state-of-the-art performances across multiple datasets.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+<!--     <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <h2 class="title is-3">Architecture</h2>
+        <img src="./static/images/architecture.png"
+             class="interpolation-image"
+             alt="Interpolate start reference image."/>
+      <h4 class="subtitle has-text-centered">
+        (a) Framework overview. MA-LMM auto-regressively processes video frames in an online manner. Two long-term memory banks are designed to store the raw visual features and learned queries at each timestep, which are used for future reference. The Q-Former is composed of several cascaded blocks, indexed by l. LLM outputs text for various video understanding downstream tasks. The snowflake icon indicates components with fixed parameters, while the flame icon denotes parts of the model that are fine-tuned. (b) Illustration of the memory bank compression technique, which is applied to maintain the length of the memory bank constant.
+      </h4>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results</h2>
+
+        <!-- Long-term Video Understanding. -->
+        <h3 class="title is-4">Long-term Video Understanding</h3>
+        <img src="./static/images/classification_table.png"
+             class="interpolation-image"
+             alt="Interpolate start reference image."/>
+        <div class="content has-text-centered">
+            <h5 class="title is-6">Long-term Video Understanding results on the LVU, Breakfast and COIN datasets.</h5>
+        </div>
+
+
+        <!-- Video Question Answering. -->
+        <h3 class="title is-4">Video Question Answering</h3>
+        <img src="./static/images/vqa_table.png"
+             class="interpolation-image"
+             alt="Interpolate start reference image."
+             style="padding-left: 20%; padding-right: 20%;"/>
+        <div class="content has-text-centered">
+            <h5 class="title is-6">Video Question Answering results on the MSRVTT, MSVD and ActivityNet datasets.</h5>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Visualization</h2>
+
+        <!-- Video Question Answering. -->
+        <h3 class="title is-4">Video Question Answering</h3>
+        <img src="./static/images/vqa.png"
+             class="interpolation-image"
+             alt="Interpolate start reference image."/>
+        <div class="content has-text-centered">
+            <h5 class="title is-6">Visualization results on the video question answering task and the online off-the-shelf setting.</h5>
+        </div>
+
+
+        <!-- Video Captioning. -->
+        <h3 class="title is-4">Video Captioning</h3>
+        <img src="./static/images/caption.png"
+             class="interpolation-image"
+             alt="Interpolate start reference image."/>
+        <div class="content has-text-centered">
+            <h5 class="title is-6">Visualization results on the video question answering task and the online off-the-shelf setting.</h5>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{he2024malmm,
+  author    = {He, Bo and Li, Hengduo and Jang, Young Kyun and Jia, Menglin and Cao, Xuefei and Shah, Ashish and Shrivastava, Abhinav and Lim, Ser-Nam},
+  title     = {MA-LMM: Memory-Augmented Large Multimodal Model for Long-Term Video Understanding},
+  journal   = {CVPR},
+  year      = {2024},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+<!--     <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website template credited to <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
